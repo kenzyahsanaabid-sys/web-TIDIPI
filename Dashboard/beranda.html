@@ -1,17 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TIDIPI – Cetak 3D Politeknik Negeri Jember</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page:#ffffff;
+    --card:#f5efe3;
+    --gold:#b8862f;
+    --clay:#b97a3c;
+    --text:#4a4036;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--page);padding:16px;min-height:100vh}
+  .hero{
+    position:relative;overflow:hidden;
+    max-width:1200px;margin:0 auto;min-height:620px;
+    background:var(--card);border-radius:40px;
+    display:grid;grid-template-columns:1fr 1fr;align-items:center;
+    padding:72px 40px 72px 40px;gap:24px;
+  }
+  .hero::before{
+    content:"";position:absolute;top:-80px;left:-80px;width:320px;height:320px;border-radius:50%;
+    background:radial-gradient(circle,#e3e1e8 0%,rgba(227,225,232,0) 70%);
+  }
+  .hero::after{
+    content:"";position:absolute;bottom:-90px;right:-60px;width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle,#e1e8e4 0%,rgba(225,232,228,0) 70%);
+  }
+  .copy{position:relative;z-index:1;padding-left:24px}
+  h1{
+    font-size:clamp(2.2rem,4.4vw,3.4rem);font-weight:700;line-height:1.1;
+    letter-spacing:-0.03em;color:var(--gold);max-width:11em;
+  }
+  .copy p{margin-top:20px;max-width:30em;font-size:.95rem;line-height:1.65;color:var(--text)}
+  .btn{
+    display:inline-flex;align-items:center;gap:14px;margin-top:28px;
+    background:var(--clay);color:#fff;text-decoration:none;
+    font-size:.8rem;font-weight:600;padding:10px 12px 10px 20px;border-radius:999px;
+    box-shadow:0 8px 18px rgba(185,122,60,.3);transition:transform .2s,box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(185,122,60,.38)}
+  .btn:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+  .btn .arrow{
+    width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.28);
+    display:grid;place-items:center;
+  }
+  .art{position:relative;z-index:1;display:flex;justify-content:center}
+  .art svg{width:100%;max-width:420px;height:auto}
+  @media (max-width:800px){
+    .hero{grid-template-columns:1fr;padding:48px 24px;border-radius:28px}
+    .copy{padding-left:0}
+  }
+</style>
 </head>
 <body>
-    <h1>Website TIDIPI</h1>
-    <p>bagus!</p>
-    <p>bagus!</p>
-    <p>bagus!</p>
-    <p>bagus!</p>
-    <p>bagus!</p>
-    <p>bagus!</p>
+<section class="hero">
+  <div class="copy">
+    <h1>Wujudkan Desain 3D Impianmu Bersama TIDIPI!</h1>
+    <p>Layanan manufaktur aditif &amp; cetak 3D presisi tinggi untuk prototipe, riset rekayasa, dan komponen manufaktur industri, yang dikelola oleh Politeknik Negeri Jember</p>
+    <a class="btn" href="#cetak">
+      Cetak Model 3D Sekarang
+      <span class="arrow" aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h8M6.5 2.5 10 6 6.5 9.5"/></svg>
+      </span>
+    </a>
+  </div>
+
+  <div class="art" role="img" aria-label="Ilustrasi mesin cetak 3D">
+    <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="shadow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#2b2b2b" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#2b2b2b" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- bayangan -->
+      <ellipse cx="210" cy="268" rx="100" ry="20" fill="url(#shadow)"/>
+      <!-- roda biru -->
+      <rect x="146" y="196" width="14" height="40" rx="7" fill="#1f7fc4"/>
+      <ellipse cx="153" cy="236" rx="9" ry="7" fill="#1f7fc4"/>
+      <rect x="246" y="204" width="14" height="40" rx="7" fill="#1f7fc4"/>
+      <ellipse cx="253" cy="244" rx="9" ry="7" fill="#1f7fc4"/>
+      <!-- badan kuning -->
+      <polygon points="60,100 275,135 275,185 80,150" fill="#e6b11c"/>
+      <polygon points="275,135 300,128 300,170 275,185" fill="#d39e12"/>
+      <polygon points="80,150 275,185 275,200 80,165" fill="#f0bf26"/>
+      <!-- pelat atas -->
+      <polygon points="60,76 145,24 270,72 275,100 120,94 60,100" fill="#ffc72a"/>
+      <polygon points="64,78 146,28 262,72 120,90" fill="#ffc72a" stroke="#0c8f8a" stroke-width="1.8"/>
+      <polygon points="120,94 275,100 275,135 60,100" fill="#f2b81c"/>
+      <!-- titik oranye -->
+      <circle cx="140" cy="62" r="2.5" fill="#f26a2e"/>
+      <circle cx="170" cy="70" r="2.5" fill="#f26a2e"/>
+      <circle cx="215" cy="84" r="2.5" fill="#f26a2e"/>
+      <!-- lingkaran oranye -->
+      <circle cx="90" cy="128" r="24" fill="#e2551d"/>
+      <circle cx="82" cy="126" r="9" fill="#ffb32b"/>
+      <circle cx="106" cy="139" r="6" fill="#1f9de0"/>
+      <!-- ungu kiri -->
+      <polygon points="60,96 72,112 52,108" fill="#7c4be0"/>
+      <!-- ungu kanan -->
+      <polygon points="270,56 300,36 308,60 285,76 300,92 270,96" fill="#8f63f0"/>
+      <polygon points="285,78 318,70 322,90 295,96" fill="#6d3fd6"/>
+      <polygon points="300,36 318,34 316,66 308,60" fill="#a57af5"/>
+    </svg>
+  </div>
+</section>
 </body>
 </html>
